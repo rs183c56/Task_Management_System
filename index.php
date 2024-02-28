@@ -6,10 +6,21 @@ include ("config.php");
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>RicaNizel_TMS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- try ta butang background image dani -->
+    <style>
+    body {
+      background-image: url('img/bkg.png'); 
+      background-size: cover;
+    }
+  </style>
+
   </head>
+
+
   <body>
 
  <div class="container-fluid mt-4">
@@ -19,47 +30,50 @@ include ("config.php");
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Student Information</h5>
+              <h5 class="card-title" style="text-align:center;"> Task Management System</h5>
 
-              <a href="insert.php" style="float: right;" class="btn btn-primary">Add Student</a>
+              <a href="insert.php" style="float: right;" class="btn btn-primary">Add Task</a>
+              <form action="process.php">
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th class="col">Name</th>
-                    <th class="col">Birthday</th>
-                    <th class="col">Email</th>
-                    <th class="col">Phone Number</th>
-                    <th class="col">Address</th>
-                    <th class="col">Action</th>
+                    <th class="col">Title</th>
+                    <th class="col">Description</th>
+                    <th class="col">Priority</th>
+                    <th class="col">Due Date</th>
+
+
                   </tr>
                 </thead>
                 <tbody>
 
-
+                <!-- database -->
                 <?php
-                $query = "SELECT * FROM `student`";
+                $query = "SELECT * FROM tasks";
                 $query_run = mysqli_query($con, $query);
                 if(mysqli_num_rows($query_run) > 0)
                 {
                 foreach($query_run as $row)
                 {
                 ?>
+
                     <tr>
-                <td><b><?= $row['fname']; ?> <?= $row['mname']; ?> <?= $row['lname']; ?></b></td>
-                <td><?= $row['date_of_birth']; ?></td>
-                <td><?= $row['email']; ?></td>
-                <td><?= $row['phone_number']; ?></td>
-                <td><?= $row['address']; ?></td>
+                <td><?= $row['title']; ?></td>
+                <td><?= $row['description']; ?></td>
+                <td><?= $row['priority']; ?></td>
+                <td><?= $row['due_date']; ?></td>
+                
 
                 <td>
 
-                <a type="button" class="btn btn-outline-primary" href="view.php?id=<?=$row['id'];?>">VIEW</a>
-                <a type="button" class="btn btn-outline-warning" href="update.php?id=<?=$row['id'];?>">UPDATE</a>
+                <a type="button" style="margin-bottom: 10px; margin-top:10px;" class="btn btn-info" href="edit_task.php?id=<?=$row['id'];?>">Update</a>
+
+                <a type="button" style="position: absolute; margin-left: 10px; margin-top:10px; height: 86px; padding-top: 27px; text-align:center;" class="btn btn-success" href="view_task.php?id=<?=$row['id'];?>">View</a>
                 
                 <form action="process.php" method="POST">
                 <input type="hidden" name="id" value="<?= $row['id']; ?>">
-                <button type="submit" class="btn btn-outline-danger">DELETE</button>
+                <button type="button" class="btn btn-outline-danger"href="delete.php">DELETE</button>
                 </form>
               </td>
                     </tr>
@@ -110,5 +124,8 @@ if (isset($_SESSION['status']) && $_SESSION['status_code'] != '' )
         unset($_SESSION['status_code']);
 }
 ?>
+
+
+
   </body>
 </html>

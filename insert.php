@@ -11,36 +11,43 @@ include ("config.php");
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <style>
+    body {
+      background-image: url('img/bkg.png'); 
+      background-size: cover;
+    }
+  </style>
+    
 </head>
 <body>
 
-<h1 class="text-center">Insert Student Data</h1>
+<h1 class="text-center">Add Task</h1>
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-lg-9">
             <form action="process.php" method="POST">
                 <div class="row">
                     <div class="col-md-12 mb-3">
-                        <label for="studentId" class="form-label">Student I.D</label>
-                        <input type="text" class="form-control" id="studentId" name="studentId">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title" name="title">
                     </div>
 
                     <div class="col-md-4 mb-3">
-                        <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description" name="description">
                     </div>
 
                     <div class="col-md-4 mb-3">
-                        <label for="middlename" class="form-label">Middle Name</label>
-                        <input type="text" class="form-control" id="middlename" name="middlename">
+                        <label for="priority" class="form-label">Priority (Low,Medium, High)</label>
+                        <input type="text" class="form-control" id="priority" name="priority">
                     </div>
 
                     <div class="col-md-4 mb-3">
-                        <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName">
+                        <label for="due_date" class="form-label">Due Date</label>
+                        <input type="date" class="form-control" id="due_date" name="due_date">
                     </div>
 
-                    <div class="col-md-4 mb-3">
+                    <!-- <div class="col-md-4 mb-3">
                         <label for="date_of_birth" class="form-label">Date of Birth</label>
                         <input type="date" class="form-control" id="date_of_birth" name="date_of_birth">
                     </div>
@@ -58,11 +65,12 @@ include ("config.php");
                     <div class="col-md-4 mb-3">
                         <label for="address" class="form-label">Address</label>
                         <input type="text" class="form-control" id="address" name="address">
-                    </div>
+                    </div> -->
 
                     <div class="col-md-12 mb-3 text-center">
-                        <button type="submit" class="btn btn-primary" name="insert" style="float: right;">Submit</button>
-                    </div>
+                    <button type="submit" class="btn btn-primary" name="insert" style="float: right;">Add Task</button>
+                        
+                </div>
                 </div>
             </form>
         </div>

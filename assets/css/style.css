@@ -234,9 +234,9 @@ h6 {
 
 .card-title {
   padding: 20px 0 15px 0;
-  font-size: 18px;
-  font-weight: 500;
-  color: #012970;
+  font-size: 30px;
+  font-weight: 900;
+  color: #b67a2c;
   font-family: "Poppins", sans-serif;
 }
 
@@ -822,7 +822,7 @@ h6 {
 
 .dashboard .sales-card .card-icon {
   color: #4154f1;
-  background: #f6f6fe;
+  background: #2a2aaf;
 }
 
 .dashboard .revenue-card .card-icon {
