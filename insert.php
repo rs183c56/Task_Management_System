@@ -38,8 +38,13 @@ include ("config.php");
                     </div>
 
                     <div class="col-md-4 mb-3">
-                        <label for="priority" class="form-label">Priority (Low,Medium, High)</label>
-                        <input type="text" class="form-control" id="priority" name="priority">
+                        <!--REFERENCE FOR DROPDOWN: https://www.w3schools.com/howto/howto_js_dropdown.asp -->
+                        <label for="priority" class="form-label">Priority</label>
+                        <select class="form-control" id="priority" name="priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
                     </div>
 
                     <div class="col-md-4 mb-3">
