@@ -21,7 +21,7 @@ include ("config.php");
 </head>
 <body>
 
-<h1 class="text-center">Add Task</h1>
+<h1 class="text-center" style="margin-top: 50px">Add Task</h1>
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-lg-9">

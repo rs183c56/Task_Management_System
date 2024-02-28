@@ -69,7 +69,7 @@ include ("config.php");
 
                 <a type="button" style="margin-bottom: 10px; margin-top:10px;" class="btn btn-info" href="edit_task.php?id=<?=$row['id'];?>">Update</a>
 
-                <a type="button" style=" position: absolute; margin-left: 92px; margin-top:10px; height: 38px;  text-align:center;" class="btn btn-success" href="view_task.php?id=<?=$row['id'];?>">View</a>
+                <a type="button" style=" position: absolute; margin-left: 92px; margin-top:10px; height: 38px;  text-align:center;" class="btn btn-success" href="view.php?id=<?=$row['id'];?>">View</a>
                 
                 <form action="process.php" method="POST">
                 <input type="hidden" name="id" value="<?= $row['id']; ?>">
